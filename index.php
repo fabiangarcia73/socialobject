@@ -187,12 +187,27 @@ echo ("<p>".$frases[0]."</p>");
        
         <hr class="w3-clear">
         <?php //Ejemplo aprenderaprogramar.com
-$file = fopen("muro.txt", "r");
-while(!feof($file)) {
-echo fgets($file). "<br />";
-}
-fclose($file);
-?>
+		
+		$datos=file('muro.txt') or die ("no puede leer en el archivo");
+echo end($datos) ."\n";		//obtiene la ultima linea
+		?>
+		 <?php //Ejemplo aprenderaprogramar.com
+		
+		$datos=file('muro.txt') or die ("no puede leer en el archivo");
+	//obtiene la ultima linea
+
+$lineas = count(file($datos));
+
+
+//obtine la linea 2 a la 6
+$lineas=array_slice($datos, 1,300);
+echo implode("\n",$lineas); 
+
+echo $datos[$lineas] ."\n";
+
+
+?>     
+ 
      
         <hr class="w3-clear">
         
